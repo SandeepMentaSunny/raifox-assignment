@@ -1,0 +1,20 @@
+<div class="detailBox" *ngIf="comments && comments.length > 0">
+  <div class="titleBox">
+    <label>Comments</label>
+  </div>
+  <div class="commentBox">
+    <h3 class="taskDescription" *ngIf="postTitle && postTitle.title">{{postTitle.title | titlecase}}</h3>
+  </div>
+  <div class="actionBox">
+    <ul class="commentList">
+      <li *ngFor="let comment of comments; let i=index;">
+        <div class="commenterImage">
+          <img src="assets/images/avatar.png" />
+        </div>
+        <div class="commentText">
+          <p class="">{{comment.body}}</p> <span class="date sub-text">{{comment.email}}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

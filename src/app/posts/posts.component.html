@@ -1,0 +1,12 @@
+<div *ngIf="posts && posts.length > 0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4" *ngFor="let post of posts; let i=index; trackBy: trackById">
+        <div class="card" (click)="showComments(post?.userId, post?.title)">
+          <h4>{{post?.title | titlecase}}</h4>
+          <p>{{post?.body}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
